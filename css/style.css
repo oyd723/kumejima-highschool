@@ -1,0 +1,1320 @@
+/*=====================================
+	全般設定
+======================================*/
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 14px;
+}
+
+/* コンテンツ中央寄せ */
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+/* コンテンツフェードイン用のCSS */
+.slide-bottom {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 2.3s 0s ease-out;
+}
+
+/*=====================================
+	共通デザイン　ヘッダー
+======================================*/
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #fff;
+
+  /* 上部に固定 */
+  position: fixed;
+  top: 0px;
+  width: 100%;
+
+  /* 最前面に配置 */
+  z-index: 9999;
+}
+
+/******** ナビゲーション **********/
+.gnavi {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gnavi li a {
+  /* アニメーション用 基準位置 */
+  position: relative;
+}
+
+/* 下線デザイン */
+.gnavi li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: #05A4D6;
+
+  /* transition-property: all; （全てのプロパティで実行）*/
+  /* transition-duration: 3s;（変化の開始から終了までの時間） */
+  /* transform-origin: left top;（要素の座標原点） */
+  /* transform: scale(0, 1);（横拡大、縦縮小） */
+  transition: all .3s;
+  transform: scale(0, 1);
+  transform-origin: left top;
+}
+
+.gnavi li.current a::after,
+.gnavi li a:hover::after {
+  transform: scale(1, 1);
+}
+
+
+
+/*=====================================
+	共通デザイン　見出し
+======================================*/
+.h2_ptn1 {
+  color: #05A4D6;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.h2_ptn2 {
+  color: #05A4D6;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+h3 {
+  color: #F7A2B2;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+
+
+/*=====================================
+	共通デザイン　イラストアニメーション
+======================================*/
+.illust {
+  /* ease-out：開始時は早く変化し、終了時は緩やかに変化 */
+  /* infinite：無限に再生を繰り返す */
+  animation: illust 2s ease-out infinite;
+}
+
+@keyframes illust {
+
+  0%,
+  40%,
+  60%,
+  80% {
+    transform: scale(1.0);
+  }
+
+  50%,
+  70% {
+    transform: scale(0.95);
+  }
+}
+
+
+
+/*=====================================
+	共通デザイン　角丸ボタン
+======================================*/
+/* 小サイズ 中央寄せ */
+.btn_short {
+  width: 230px;
+  margin: 0 auto;
+}
+
+.btn_short a {
+  display: inline-block;
+  width: 230px;
+  height: 50px;
+  background-color: #2570BA;
+  border-radius: 50px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* 小サイズ 右寄せ */
+.btn_short_right {
+  text-align: right;
+  margin-top: -30px;
+  margin-right: -20px;
+}
+
+.btn_short_right a {
+  display: inline-block;
+  width: 230px;
+  height: 50px;
+  background-color: #2570BA;
+  border-radius: 50px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* 大サイズ */
+.btn_long {
+  display: flex;
+  justify-content: center;
+}
+
+.btn_long a {
+  display: inline-block;
+  width: 300px;
+  height: 50px;
+  background-color: #2570BA;
+  border-radius: 50px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+}
+
+/******** ボタンアニメーション **********/
+.btn_short a,
+.btn_short_right a,
+.btn_long a {
+  background: #fff;
+  color: #2570BA;
+  border: 1px solid #2570BA;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.btn_short a::after,
+.btn_short_right a::after,
+.btn_long a::after {
+  background: #2570BA;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1;
+}
+
+.btn_short a:hover,
+.btn_short_right a:hover,
+.btn_long a:hover {
+  color: #fff;
+}
+
+.btn_short a:hover::after,
+.btn_short_right a:hover::after,
+.btn_long a:hover::after {
+  transform: scale(1, 1);
+}
+
+
+
+/*=====================================
+	共通デザイン　フッターコンタクト
+======================================*/
+footer .banner {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+footer .banner .contact_area {
+  background-color: #F7A2B2;
+  border-radius: 10px;
+  color: #fff;
+  width: 1000px;
+  padding: 20px;
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 50px;
+  text-align: center;
+  margin-left: 50px;
+}
+
+.contact_btn {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact_btn a span {
+  font-size: 9px;
+}
+
+/******** ボタンデザイン/アニメーション **********/
+.contact_btn a {
+  width: 300px;
+  height: 50px;
+  background: #fff;
+  color: #0065C8;
+  border: 1px solid #0065C8;
+  border-radius: 50px;
+  display: inline-block;
+  text-align: center;
+  padding-top: 10px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.contact_btn a::after {
+  background: #0065C8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1;
+}
+
+.contact_btn a:hover {
+  color: #fff;
+}
+
+.contact_btn a:hover::after {
+  transform: scale(1, 1);
+}
+
+
+
+/*=====================================
+	共通デザイン　フッター
+======================================*/
+footer .linklist {
+  background-color: #05A4D6;
+  padding: 50px 50px 100px 50px;
+}
+
+footer .linklist .inner {
+  width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #fff;
+}
+
+footer .linklist .inner h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+footer .linklist .inner li {
+  line-height: 28px;
+}
+
+footer .center {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+footer address {
+  line-height: 20px;
+  padding: 30px 0 0 0px;
+  color: #fff;
+}
+
+footer address p:nth-child(1) {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+footer address p:nth-child(2) {
+  font-size: 13px;
+}
+
+/* 見出しアイコン */
+footer .introduction h4::before {
+  content: url(../images/fotter_icon1.svg);
+  vertical-align: middle;
+  padding-right: 5px;
+  margin-left: -35px;
+}
+
+footer .schoollife h4::before {
+  content: url(../images/fotter_icon2.svg);
+  vertical-align: middle;
+  padding-right: 5px;
+  margin-left: -23px;
+}
+
+footer .test h4::before {
+  content: url(../images/fotter_icon3.svg);
+  vertical-align: middle;
+  padding-right: 5px;
+  margin-left: -20px;
+}
+
+footer .contact h4::before {
+  content: url(../images/fotter_icon4.svg);
+  vertical-align: middle;
+  padding-right: 5px;
+  margin-left: -28px;
+}
+
+/******** リンク一覧アニメーション **********/
+footer .linklist a {
+  /* font-weight: bold; */
+  position: relative;
+  padding: 0.1em 0.3em;
+  display: inline-block;
+  transition: .3s;
+}
+
+footer .linklist a::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 1px;
+  /*下線の太さ*/
+  background-color: #fff;
+  /*下線の色*/
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+footer .linklist a:hover::after {
+  width: 100%;
+}
+
+footer .linklist a:visited {
+  color: #bec9d6;
+}
+
+/******** 波アニメーション **********/
+canvas {
+  width: 100%;
+  margin-bottom: -10px;
+}
+
+
+
+/*=====================================
+	共通デザイン　コンテンツページタイトル
+======================================*/
+.section01.slide-in-left {
+  overflow: hidden;
+}
+
+.section01.slide-in-left .backcolor {
+  background-color: #EAF5FC;
+  width: 70%;
+  height: 100px;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  margin-top: -30px;
+  margin-bottom: 50px;
+}
+
+.section01.slide-in-left h2 {
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.section01.slide-in-left p {
+  color: #05A4D6;
+}
+
+.section01.slide-in-left p::after {
+  content: "";
+  background: #F7A2B2;
+  width: 48px;
+  height: 2px;
+  margin: 0 0 0 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.section01.slide-in-left .text {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+/******** スライドインアニメーション **********/
+.slide-in-left {
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+/*=====================================
+	TOPページ　
+======================================*/
+main {
+  margin-top: 100px;
+}
+
+/* section01 */
+#top .section01 .inner {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+#top .section01 .inner p {
+  font-size: 10px;
+  color: #05A4D6;
+  margin-bottom: 5px;
+}
+
+/* テキスト前のライン */
+#top .section01 .inner p::before {
+  content: "";
+  background: #f4f500;
+  width: 48px;
+  height: 2px;
+  margin: 0 10px 0 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#top .section01 table {
+  margin: 10px 0 20px 0;
+  width: 420px;
+}
+
+#top .section01 tr {
+  border-bottom: 1px solid #707070;
+}
+
+#top .section01 td {
+  padding: 10px 10px 10px 0;
+}
+
+#top .section01 img {
+  height: 14px;
+}
+
+#top .section01 span {
+  color: red;
+}
+
+#top .section01 table a:visited {
+  color: #8297b6;
+}
+
+/* section02 */
+#top .section02 .inner {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+#top .section02 .text {
+  background-color: #fff;
+  padding: 50px;
+  line-height: 28px;
+  border-radius: 30px;
+  margin-left: -150px;
+  margin-top: 80px;
+}
+
+#top .section02 .text p {
+  margin-bottom: 20px;
+}
+
+/* section03 */
+#top .section03 {
+  background-color: #F9FBFC;
+  padding: 50px 50px 100px 50px;
+  margin-bottom: 50px;
+}
+
+#top .section03 .inner .contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+#top .section03 .text {
+  width: 550px;
+  padding: 50px;
+  line-height: 28px;
+}
+
+#top .section03 .image {
+  width: 550px;
+  padding: 50px;
+}
+
+/* section04 */
+#top .section04 {
+  margin-bottom: 50px;
+  padding: 50px;
+}
+
+#top .section04 .image {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#top .section04 img {
+  border-radius: 0 30px 0 30px;
+}
+
+#top .section04 .text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+#top .section04 .text p {
+  width: 350px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* section05 */
+#top .section05 {
+  background-color: #F9FBFC;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+#top .section05 .inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+#top .section05 img {
+  margin-bottom: -70px;
+  margin-left: 50px;
+}
+
+/* テキスト前ライン */
+#top .section05 .subtitle::before {
+  content: "";
+  background: #f4f500;
+  width: 48px;
+  height: 2px;
+  margin: 0 10px 0 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+#top .section05 .left,
+#top .section05 .right {
+  padding: 50px 0;
+}
+
+#top .section05 .left .text {
+  width: 420px;
+  height: 258px;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 50px;
+}
+
+#top .section05 .right .text {
+  width: 420px;
+  height: 258px;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 50px;
+}
+
+#top .section05 .inner .subtitle {
+  font-size: 10px;
+  color: #05A4D6;
+}
+
+#top .section05 .inner .textbody {
+  line-height: 28px;
+}
+
+/******** テキストリンクアニメーション **********/
+#top .section01 table a {
+  display: inline-block;
+  transition: .3s;
+  transform: scale(1);
+}
+
+#top .section01 table a:hover {
+  font-weight: bold;
+  transform: scale(1.05);
+}
+
+
+/*=====================================
+	離島留学ページ　
+======================================*/
+/* section02 */
+#abroad .section02 .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+#abroad .section02 .text {
+  line-height: 28px;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 50px;
+  margin-right: -150px;
+  margin-top: 80px;
+  z-index: 1;
+}
+
+#abroad .section02 .text p {
+  margin-bottom: 50px;
+}
+
+/* section03 */
+#abroad .section03 {
+  background-color: #F9FBFC;
+  margin-bottom: 50px;
+  padding: 50px;
+}
+
+#abroad .section03 .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px 0;
+}
+
+#abroad .section03 .inner .area1,
+#abroad .section03 .inner .area2,
+#abroad .section03 .inner .area3 {
+  width: 350px;
+}
+
+#abroad .section03 .inner img {
+  margin-bottom: 20px;
+  border-radius: 0 30px 0 30px;
+}
+
+#abroad .section03 .inner p:nth-child(2) {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+#abroad .section03 .inner p:nth-child(3) {
+  padding: 0 30px 20px 30px;
+  line-height: 28px;
+}
+
+/* section04 */
+#abroad .section04 .inner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  padding: 50px 0;
+}
+
+#abroad .section04 .text {
+  padding: 50px;
+  line-height: 28px;
+}
+
+#abroad .section04 .text p:last-child {
+  background-color: #E9F3FB;
+  padding: 20px;
+  line-height: 20px;
+  margin-top: 20px;
+}
+
+/* section05 */
+#abroad .section05 {
+  background-color: #F9FBFC;
+  margin-bottom: 50px;
+  padding: 50px;
+}
+
+#abroad .section05 .inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+#abroad .section05 .inner .left,
+#abroad .section05 .inner .right {
+  padding: 50px;
+}
+
+#abroad .section05 .text {
+  height: 320px;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 50px;
+  line-height: 28px;
+}
+
+#abroad .section05 img {
+  margin-bottom: -30px;
+  margin-left: 60px;
+}
+
+/* section06 */
+#abroad .section06 {
+  margin-bottom: 50px;
+  padding: 50px 0;
+}
+
+
+
+/*=====================================
+	久米島高校について　
+======================================*/
+/* section02 */
+#about .section02 {
+  margin-bottom: 50px;
+}
+
+/* section03 */
+#about .section03 {
+  background-color: #F9FBFC;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+#about .section03 .inner {
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#about .section03 .text {
+  line-height: 28px;
+  padding: 0 50px;
+}
+
+#about .section03 p {
+  margin-bottom: 20px;
+}
+
+#about .section03 table {
+  width: 450px;
+  text-align: center;
+  border: 3px solid #ddd;
+}
+
+#about .section03 thead {
+  background-color: #E9F3FB;
+  border-bottom: 3px solid #ddd;
+}
+
+#about .section03 tbody {
+  background-color: #fff;
+}
+
+#about .section03 td {
+  border-right: 3px solid #ddd;
+  padding: 10px;
+}
+
+/* section04 */
+#about .section04 {
+  padding: 50px 0;
+  margin-bottom: 50px;
+}
+
+/* section05 */
+#about .section05 .inner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  padding: 50px 0;
+}
+
+#about .section05 .text {
+  margin: 30px 50px 50px 50px;
+  line-height: 28px;
+}
+
+/* section06 */
+#about .section06 {
+  background-color: #F9FBFC;
+  margin-bottom: 50px;
+  padding: 50px;
+}
+
+#about .section06 .inner {
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#about .section06 .text {
+  padding: 50px;
+  line-height: 28px;
+}
+
+/* section07 */
+#about .section07 .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 50px 0;
+}
+
+#about .section07 .text {
+  padding: 50px 20px 50px 20px;
+}
+
+#about .section07 h2 {
+  margin-bottom: 20px;
+}
+
+#about .section07 table {
+  border: 3px solid #ddd;
+  line-height: 35px;
+}
+
+#about .section07 th {
+  background-color: #E9F3FB;
+  text-align: center;
+  padding: 0 15px;
+  font-weight: bold;
+}
+
+#about .section07 td {
+  padding: 0 30px 0 20px;
+}
+
+/* section08 */
+#about .section08 {
+  background-color: #F9FBFC;
+  margin-bottom: 50px;
+  padding: 50px;
+}
+
+#about .section08 .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+}
+
+#about .section08 .contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#about .section08 .text {
+  padding: 50px;
+  line-height: 22px;
+}
+
+#about .section08 .text_left {
+  margin-right: 50px;
+}
+
+#about .section08 .text_left p:first-child,
+#about .section08 .text_right p:first-child {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+
+/*=====================================
+	学校長あいさつ
+======================================*/
+/* section02 */
+#koutyou .section02 {
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+#koutyou .section02 img {
+  border-radius: 0 50px 0 50px;
+}
+
+#koutyou .section02 .center {
+  text-align: center;
+}
+
+/* section03 */
+#koutyou .section03 {
+  background-color: #F9FBFC;
+  padding: 50px;
+}
+
+#koutyou .section03 .inner {
+  padding: 50px;
+}
+
+#koutyou .section03 p {
+  line-height: 28px;
+}
+
+#koutyou .section03 .bold {
+  font-weight: bold;
+  line-height: 28px;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+/* section04 */
+#koutyou .section04 {
+  width: 1100px;
+  margin: 0 auto;
+  text-align: right;
+  margin-bottom: 50px;
+}
+
+#koutyou .section04 p {
+  background-color: #fff;
+  border-radius: 30px;
+  margin-top: -120px;
+  display: inline-block;
+  padding: 50px;
+  line-height: 20px;
+}
+
+
+/******** 画像アニメーション **********/
+.scale-up-center {
+  -webkit-animation: scale-up-center 2.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: scale-up-center 2.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+
+
+/*=====================================
+	入試情報について　
+======================================*/
+
+/* section02 */
+#examination .section02 {
+  width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#examination .section02 p:first-child {
+  margin-bottom: 50px;
+  line-height: 28px;
+}
+
+#examination .section02 p:nth-child(3) {
+  margin-bottom: 10px;
+}
+
+#examination .section02 .btn_short {
+  margin-bottom: 50px;
+}
+
+/* section03 */
+#examination .section03 {
+  background-color: #F9FBFC;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+#examination .section03 h2 {
+  text-align: center;
+}
+
+#examination .section03 .link1 p:nth-child(5) {
+  margin-bottom: 50px;
+}
+
+#examination .section03 p a {
+  background-color: #fff;
+  height: 60px;
+  width: 700px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* section04 */
+#examination .section04 {
+  width: 1110px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+#examination .section04 h2 {
+  margin-bottom: 50px;
+}
+
+#examination .section04 img {
+  filter: drop-shadow(10px 5px 10px #ddd);
+  margin-bottom: 40px;
+}
+
+#examination .section04 p {
+  margin-bottom: 10px;
+}
+
+/* section05 */
+
+#examination .section05 {
+  background-color: #F9FBFC;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+#examination .section05 h2 {
+  text-align: center;
+}
+
+
+#examination .section05 p a {
+  background-color: #fff;
+  height: 60px;
+  width: 700px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+#examination .section05 .link1 p {
+  margin-bottom: 50px;
+}
+
+/******** リンクデザイン **********/
+.link1 a,
+.link2 a {
+  -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  display: block;
+  margin: 20px auto;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 20px 30px;
+}
+
+a.btn_transform {
+  color: rgba(37, 112, 186, 0.85);
+  box-shadow: rgba(37, 112, 186, 0.4) 0 0px 0px 2px inset;
+}
+
+a.btn_transform:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(37, 112, 186, 0.7) 0 0px 0px 40px inset;
+}
+
+/******** リンクアニメーション **********/
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+.context {
+  width: 100%;
+  position: absolute;
+  top: 50vh;
+
+}
+
+.context h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+}
+
+
+.area {
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  width: 100%;
+  height: 100vh;
+
+
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(5, 164, 214, 0.2);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+
+}

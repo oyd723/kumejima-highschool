@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 30 20">
+  <g id="fotter_icon1" transform="translate(0 -76.5)">
+    <path id="パス_109" data-name="パス 109" d="M21.879,83.122,15,76.5,8.121,83.128H0V96.5H30V83.122ZM1.389,84.448H8.7L15,78.382l6.293,6.065h7.313V95.174H16.488V90.814a1.49,1.49,0,0,0-2.977,0v4.361H1.389Z" fill="#fff"/>
+    <rect id="長方形_59" data-name="長方形 59" width="1.547" height="2.859" transform="translate(3.645 89.619)" fill="#fff"/>
+    <rect id="長方形_60" data-name="長方形 60" width="1.553" height="2.859" transform="translate(8.479 89.619)" fill="#fff"/>
+    <rect id="長方形_61" data-name="長方形 61" width="1.553" height="2.859" transform="translate(19.975 89.619)" fill="#fff"/>
+    <rect id="長方形_62" data-name="長方形 62" width="1.553" height="2.859" transform="translate(24.809 89.619)" fill="#fff"/>
+    <path id="パス_110" data-name="パス 110" d="M209.4,165.6a2.9,2.9,0,1,0-2.9-2.9A2.9,2.9,0,0,0,209.4,165.6Zm-1.395-4.295a1.991,1.991,0,0,1,1.395-.58,1.981,1.981,0,1,1-1.395.58Z" transform="translate(-194.4 -78.753)" fill="#fff"/>
+    <path id="パス_111" data-name="パス 111" d="M253.371,187.137h-.9V186H252v1.6h1.371Z" transform="translate(-237.234 -103.428)" fill="#fff"/>
+  </g>
+</svg>
