@@ -13,63 +13,85 @@
   <link rel="stylesheet" href="css/nav.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body id="koutyou">
   <div class="page">
     <header>
       <h1><a href="index.html"><img src="images/header_logo.png" alt="沖縄県立久米島高等学校"></a></h1>
-      <nav>
-        <ul class="gnavi">
 
-          <li class="has-child"><a href="about.html"><img src="images/header_icon1.png" alt="学校案内"></a>
-            <!--子要素を持つ li にはhas-childというクラス名をつける-->
-            <ul>
-              <li><a href="about.html">学校案内</a></li>
-              <li><a href="#">学科紹介</a></li>
-              <li><a href="#">部活動紹介</a></li>
-              <li><a href="#">学校生活</a></li>
-            </ul>
-          </li>
+      <!-- モバイル用のナビゲーション -->
+      <div class="only-mobile03">
+        <!-- ↓ハンバーガーメニューここから↓ -->
+        <div class="menu-btn">
+          <div class="openbtn1"><span></span><span></span><span></span></div>
+          <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
+        </div>
+        <div class="menu">
+          <div class="menu__item"><a href="about.html">学校案内</a></div>
+          <div class="menu__item"><a href="abroad.html">離島留学について</a></div>
+          <div class="menu__item"><a href="koutyou.html">学校長あいさつ</a></div>
+          <div class="menu__item"><a href="examination.html">入試情報</a></div>
+          <div class="menu__item"><a href="#">アクセス</a></div>
+          <div class="menu__item"><a href="#">お問い合わせ</a></div>
+        </div>
+        <!-- ↑ハンバーガーメニューここまで↑ -->
+      </div>
 
-          <li class="has-child"><a href="abroad.html"><img src="images/header_icon2.png" alt="離島留学について"></a>
-            <!--子要素を持つ li にはhas-childというクラス名をつける-->
-            <ul>
-              <li><a href="abroad.html">離島留学について</a></li>
-              <li><a href="#">学校生活</a></li>
-              <li><a href="#">地域活動</a></li>
-              <li><a href="#">プロジェクトの背景</a></li>
-            </ul>
-          </li>
 
-          <li class="has-child current"><a href="koutyou.html"><img src="images/header_icon3.png" alt="学校長あいさつ"></a>
-            <!--子要素を持つ li にはhas-childというクラス名をつける-->
-            <ul>
-              <li><a href="koutyou.html">学校長あいさつ</a></li>
-              <li><a href="#">教育理念</a></li>
-              <li><a href="#">スクールポリシー</a></li>
-            </ul>
-          </li>
+      <!-- PC用のナビゲーション -->
+      <nav class="only-mobile">
+        <nav>
+          <ul class="gnavi">
+            <li class="has-child"><a href="about.html"><img src="images/header_icon1.png" alt="学校案内"></a>
+              <!--子要素を持つ li にはhas-childというクラス名をつける-->
+              <ul>
+                <li><a href="about.html">学校案内</a></li>
+                <li><a href="#">学科紹介</a></li>
+                <li><a href="#">部活動紹介</a></li>
+                <li><a href="#">学校生活</a></li>
+              </ul>
+            </li>
 
-          <li class="has-child"><a href="examination.html"><img src="images/header_icon4.png" alt="入試情報について"></a>
-            <!--子要素を持つ li にはhas-childというクラス名をつける-->
-            <ul>
-              <li><a href="examination.html">入試情報</a></li>
-              <li><a href="#">募集要項</a></li>
-              <li><a href="#">学校説明会</a></li>
-            </ul>
-          </li>
+            <li class="has-child"><a href="abroad.html"><img src="images/header_icon2.png" alt="離島留学について"></a>
+              <!--子要素を持つ li にはhas-childというクラス名をつける-->
+              <ul>
+                <li><a href="abroad.html">離島留学について</a></li>
+                <li><a href="#">学校生活</a></li>
+                <li><a href="#">地域活動</a></li>
+                <li><a href="#">プロジェクトの背景</a></li>
+              </ul>
+            </li>
 
-          <li class="has-child"><a href="#"><img src="images/header_icon5.png" alt="アクセス"></a>
-            <!--子要素を持つ li にはhas-childというクラス名をつける-->
-            <ul>
-              <li><a href="#">アクセス</a></li>
-              <li><a href="#">お問い合わせ</a></li>
-            </ul>
-          </li>
+            <li class="has-child current"><a href="koutyou.html"><img src="images/header_icon3.png" alt="学校長あいさつ"></a>
+              <!--子要素を持つ li にはhas-childというクラス名をつける-->
+              <ul>
+                <li><a href="koutyou.html">学校長あいさつ</a></li>
+                <li><a href="#">教育理念</a></li>
+                <li><a href="#">スクールポリシー</a></li>
+              </ul>
+            </li>
 
-        </ul>
-      </nav>
+            <li class="has-child"><a href="examination.html"><img src="images/header_icon4.png" alt="入試情報について"></a>
+              <!--子要素を持つ li にはhas-childというクラス名をつける-->
+              <ul>
+                <li><a href="examination.html">入試情報</a></li>
+                <li><a href="#">募集要項</a></li>
+                <li><a href="#">学校説明会</a></li>
+              </ul>
+            </li>
+
+            <li class="has-child"><a href="#"><img src="images/header_icon5.png" alt="アクセス"></a>
+              <!--子要素を持つ li にはhas-childというクラス名をつける-->
+              <ul>
+                <li><a href="#">アクセス</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </nav>
     </header>
 
     <main>
@@ -103,11 +125,15 @@
             <br>
             最後に私が指導主事時代に文部科学省での研修の際、当時の視学官で現在名古屋外国語大学教授の太田光春先生が我々主事を激励するためによく使われていたお言葉を引用し、本校の教育を推進してまります。<br>
             <br>
-          <div class="bold">
+          <div class="bold only-mobile">
             「教育は全ての子供たちの学びの可能性を信じることから始まる。<br>
             　学びの速い・遅い、能力の高い・低いはあっても、学べない子はいない。<br>
             　だから、どの子供たちも大切である。」
           </div>
+          <div class="bold only-mobile03">
+            「教育は全ての子供たちの学びの可能性を信じることから始まる。学びの速い・遅い、能力の高い・低いはあっても、学べない子はいない。だから、どの子供たちも大切である。」
+          </div>
+
           </p>
         </div>
       </section>

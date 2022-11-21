@@ -16,15 +16,35 @@
   <link rel="stylesheet" href="css/nav.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body id="about">
   <div class="page">
     <header>
       <h1><a href="index.html"><img src="images/header_logo.png" alt="沖縄県立久米島高等学校"></a></h1>
-      <nav>
-        <ul class="gnavi">
 
+      <!-- モバイル用のナビゲーション -->
+      <div class="only-mobile03">
+        <!-- ↓ハンバーガーメニューここから↓ -->
+        <div class="menu-btn">
+          <div class="openbtn1"><span></span><span></span><span></span></div>
+          <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
+        </div>
+        <div class="menu">
+          <div class="menu__item"><a href="about.html">学校案内</a></div>
+          <div class="menu__item"><a href="abroad.html">離島留学について</a></div>
+          <div class="menu__item"><a href="koutyou.html">学校長あいさつ</a></div>
+          <div class="menu__item"><a href="examination.html">入試情報</a></div>
+          <div class="menu__item"><a href="#">アクセス</a></div>
+          <div class="menu__item"><a href="#">お問い合わせ</a></div>
+        </div>
+        <!-- ↑ハンバーガーメニューここまで↑ -->
+      </div>
+
+      <!-- PC用のナビゲーション -->
+      <nav class="only-mobile">
+        <ul class="gnavi">
           <li class="has-child current"><a href="about.html"><img src="images/header_icon1.png" alt="学校案内"></a>
             <!--子要素を持つ li にはhas-childというクラス名をつける-->
             <ul>
@@ -70,7 +90,6 @@
               <li><a href="#">お問い合わせ</a></li>
             </ul>
           </li>
-
         </ul>
       </nav>
     </header>

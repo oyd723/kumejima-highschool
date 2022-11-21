@@ -25,3 +25,29 @@ $(window).resize(function () {
 $(window).on('load', function () {
   mediaQueriesWin();/* ドロップダウンの関数を呼ぶ*/
 });
+
+// ----------------------------------
+// レスポンシブ用ナビゲーション
+// ----------------------------------
+var windowWidth = $(window).width();
+var windowSm = 480;
+if (windowWidth <= windowSm) {
+  //横幅480px以下（スマホ）に適用させるJavaScriptを記述
+
+  $(function () {
+    $('.menu-btn').on('click', function () {
+      $('.menu').toggleClass('is-active');
+    });
+  }());
+
+  $(".openbtn1").click(function () {
+    $(this).toggleClass('active');
+  });
+
+
+
+
+}
+
+
+

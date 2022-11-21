@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/nav.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body id="top">
@@ -23,7 +24,27 @@
     <header id="header">
       <h1><a href="index.html"><img src="images/header_logo.png" alt="沖縄県立久米島高等学校"></a></h1>
 
-      <nav>
+      <!-- モバイル用のナビゲーション -->
+      <div class="only-mobile03">
+        <!-- ↓ハンバーガーメニューここから↓ -->
+        <div class="menu-btn">
+          <div class="openbtn1"><span></span><span></span><span></span></div>
+          <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
+        </div>
+        <div class="menu">
+          <div class="menu__item"><a href="about.html">学校案内</a></div>
+          <div class="menu__item"><a href="abroad.html">離島留学について</a></div>
+          <div class="menu__item"><a href="koutyou.html">学校長あいさつ</a></div>
+          <div class="menu__item"><a href="examination.html">入試情報</a></div>
+          <div class="menu__item"><a href="#">アクセス</a></div>
+          <div class="menu__item"><a href="#">お問い合わせ</a></div>
+        </div>
+        <!-- ↑ハンバーガーメニューここまで↑ -->
+      </div>
+
+
+      <!-- PC用のナビゲーション -->
+      <nav class="only-mobile">
         <ul class="gnavi">
 
           <li class="has-child"><a href="about.html"><img src="images/header_icon1.png" alt="学校案内"></a>
@@ -171,7 +192,7 @@
         </div>
       </section>
 
-      <section class="section04 slide-bottom show" id="fixed">
+      <section class="section04 slide-bottom show only-mobile" id="fixed">
         <div class="inner">
           <h2 class="h2_ptn2">学校生活</h2>
           <h3>地域を学ぶ、地域と学ぶ、地域で学ぶ</h3>
@@ -188,6 +209,22 @@
           <div class="btn_long"><a href="#">詳細を見る</a></div>
         </div>
       </section>
+
+      <section class="section04 slide-bottom show only-mobile03" id="fixed">
+        <div class="inner">
+          <h2 class="h2_ptn2">学校生活</h2>
+          <h3>地域を学ぶ、地域と学ぶ、地域で学ぶ</h3>
+          <img src="images/top_image2.jpg" alt="地域行事への参加">
+          <p>地域行事への参加</p>
+
+          <img src="images/top_image3.jpg" alt="園芸祭">
+          <p>園芸祭</p>
+          <img src="images/top_image4.jpg" alt="まちづくりプロジェクト">
+          <p>まちづくりプロジェクト</p>
+          <div class="btn_long"><a href="#">詳細を見る</a></div>
+        </div>
+      </section>
+
 
       <section class="section05 slide-bottom show" id="fixed">
         <div class="inner">
@@ -273,7 +310,10 @@
         <div class="center">
           <address>
             <p>沖縄県立久米島高等学校</p>
-            <p>〒901-3121 沖縄県島尻郡久米島町字嘉手苅７２７ / TEL:098-985-2233 / E-Mail:school@kumejima-h.open.ed.jp</p>
+            <p>〒901-3121 沖縄県島尻郡久米島町字嘉手苅７２７<span class="only-mobile"> / </span><br
+                class="only-mobile02">TEL:098-985-2233<span class="only-mobile">
+                /</span><br class="only-mobile02">
+              </span> E-Mail:school@kumejima-h.open.ed.jp</p>
           </address>
         </div>
       </div>
@@ -294,7 +334,7 @@
   <script src="js/fixed.js"></script>
   <!-- フェードイン用JS -->
   <script src="js/text-anime.js"></script>
-  <!-- ナビゲーション用CSS -->
+  <!-- ナビゲーション用JS -->
   <script src="js/nav.js"></script>
 
 </body>

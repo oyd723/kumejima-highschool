@@ -1,0 +1,822 @@
+@media screen and (max-width: 480px) {
+
+  /*=====================================
+	全般設定
+======================================*/
+  /* コンテンツ中央寄せ */
+  .inner {
+    width: 100%;
+    /* margin: 0 auto; */
+  }
+
+  /* コンテンツフェードイン用のCSS */
+  .slide-bottom {
+    opacity: 1;
+    transform: none;
+  }
+
+  .only-mobile {
+    display: none;
+  }
+
+  .only-mobile02 {
+    display: inline;
+  }
+
+  .only-mobile03 {
+    display: block;
+  }
+
+  header .gnavi {
+    display: none;
+  }
+
+  /*=====================================
+	共通デザイン　ヘッダー
+======================================*/
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
+
+  /*=====================================
+	共通デザイン　ナビゲーション
+======================================*/
+  /* メニュー開閉ボタン */
+  .menu-btn {
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    z-index: 2;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #05A4D6;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  .openbtn1 {
+    position: relative;
+    /*ボタン内側の基点となるためrelativeを指定*/
+    background: #05A4D6;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+
+  .openbtn1 span {
+    display: inline-block;
+    transition: all .4s;
+    /*アニメーションの設定*/
+    position: absolute;
+    left: 13px;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    width: 45%;
+  }
+
+  .openbtn1 span:nth-of-type(1) {
+    top: 15px;
+  }
+
+  .openbtn1 span:nth-of-type(2) {
+    top: 23px;
+  }
+
+  .openbtn1 span:nth-of-type(3) {
+    top: 31px;
+  }
+
+  /*activeクラスが付与されると線が回転して×に*/
+
+  .openbtn1.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+  }
+
+  .openbtn1.active span:nth-of-type(2) {
+    opacity: 0;
+    /*真ん中の線は透過*/
+  }
+
+  .openbtn1.active span:nth-of-type(3) {
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+  }
+
+  /* メニュー本体 */
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #05A4D6;
+  }
+
+  .menu__item {
+    width: 100%;
+    height: auto;
+    padding: 1.5em 1em;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+  }
+
+  /* アニメーション部分 */
+  /* アニメーション前のメニューの状態 */
+  .menu {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s linear;
+  }
+
+  /* アニメーション後のメニューの状態 */
+  .menu.is-active {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+
+  /*=====================================
+	共通デザイン　見出し
+======================================*/
+  .h2_ptn1 {
+    font-size: 20px;
+    line-height: 30px;
+    /* margin-bottom: 20px; */
+  }
+
+  .h2_ptn2 {
+    font-size: 20px;
+    /* margin-bottom: 5px; */
+  }
+
+  h3 {
+    font-size: 17px;
+    /* margin-bottom: 20px; */
+  }
+
+
+  /*=====================================
+	共通デザイン　角丸ボタン
+======================================*/
+  /* 小サイズ 中央寄せ */
+  .btn_short {
+    width: 200px;
+    /* margin: 0 auto; */
+  }
+
+  .btn_short a {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  /* 小サイズ 右寄せ */
+  .btn_short_right {
+    margin-top: -20px;
+    margin-right: -5px;
+  }
+
+  .btn_short_right a {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  /* 大サイズ */
+  .btn_long a {
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+
+  /*=====================================
+	共通デザイン　フッターコンタクト
+======================================*/
+  footer .banner {
+    width: 100%;
+    /* margin: 0 auto; */
+    padding: 20px 0;
+  }
+
+  footer .banner .contact_area {
+    width: 85%;
+    /* padding: 20px; */
+    font-size: 14px;
+    /* line-height: 26px; */
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+
+  /*=====================================
+	共通デザイン　フッター
+======================================*/
+  footer .linklist {
+    padding: 50px;
+    padding-top: 0;
+  }
+
+  footer .linklist .inner {
+    display: none;
+  }
+
+  footer .center {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  footer address {
+    line-height: 20px;
+    padding: 30px 0 0 0px;
+    color: #fff;
+  }
+
+  footer address p:nth-child(1) {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  footer address p:nth-child(2) {
+    font-size: 13px;
+  }
+
+  /*=====================================
+	TOPページ　
+======================================*/
+  main {
+    margin-top: -50px;
+  }
+
+  /* section01 */
+  #top .section01 .inner {
+    /* padding: 50px 20px; */
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  #top .section01 .left {
+    margin-bottom: 50px;
+  }
+
+  #top .section01 table {
+    /* margin: 10px 0 20px 0; */
+    width: 95%;
+  }
+
+  /* section02 */
+  #top .section02 .inner {
+    display: block;
+    /* margin-bottom: 50px; */
+  }
+
+  #top .section02 img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #top .section02 .text {
+    background-color: #fff;
+    /* line-height: 28px; */
+    /* border-radius: 30px; */
+    margin-left: 0;
+    margin-top: 0;
+    padding: 30px;
+  }
+
+
+  /* section03 */
+  #top .section03 {
+    padding: 20px 20px 50px 20px;
+    /* margin-bottom: 50px; */
+  }
+
+  #top .section03 .inner .contents {
+    display: block;
+  }
+
+  #top .section03 .text {
+    width: 100%;
+    padding: 30px;
+  }
+
+  #top .section03 .image {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  #top .section03 .inner .contents img {
+    width: 100%;
+  }
+
+  /* section04 */
+  #top .section04 {
+    /* margin-bottom: 50px; */
+    padding: 30px;
+  }
+
+  #top .section04 .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #top .section04 img {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+
+  #top .section04 p {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  /* section05 */
+  #top .section05 {
+    padding: 30px;
+    /* margin-bottom: 50px; */
+  }
+
+  #top .section05 .inner {
+    display: block;
+  }
+
+  #top .section05 img {
+    margin-bottom: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #top .section05 .left {
+    margin-bottom: 50px;
+  }
+
+  #top .section05 .left,
+  #top .section05 .right {
+    padding: 0;
+  }
+
+  #top .section05 .left .text {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+
+  #top .section05 .right .text {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+
+
+  /*=====================================
+	TOPページ / eyecatchスライドショー
+======================================*/
+  #top .slider {
+    width: 100%;
+    height: 350px;
+  }
+
+  /******** 背景画像設定 **********/
+  #top .slider-item {
+    width: 100%;
+    height: 500px;
+  }
+
+  /******** スライドインアニメーション **********/
+  .slide-in-left {
+    animation: none;
+  }
+
+
+  /*=====================================
+	共通デザイン　コンテンツページタイトル
+======================================*/
+  .section01.slide-in-left {
+    margin-top: 150px;
+    /* overflow: hidden; */
+  }
+
+  .section01.slide-in-left .backcolor {
+    width: 80%;
+    height: 75px;
+    /* margin-top: -30px;
+    margin-bottom: 50px; */
+  }
+
+  .section01.slide-in-left .text {
+    padding-left: 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .section01.slide-in-left h2 {
+    margin-bottom: 5px;
+    margin-top: 20px;
+  }
+
+  /*=====================================
+	久米島高校について　
+======================================*/
+  /* section02 */
+  #about .section02 {
+    margin-bottom: 50px;
+  }
+
+  #about .section02 img {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  /* section03 */
+  #about .section03 {
+    padding: 30px;
+    /* margin-bottom: 50px; */
+  }
+
+  #about .section03 .inner {
+    padding: 50px 0;
+    display: block;
+  }
+
+  #about .section03 img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  #about .section03 .text {
+    padding: 0;
+  }
+
+  #about .section03 table {
+    width: 100%;
+  }
+
+  #about .section03 td {
+    padding: 5px;
+  }
+
+  /* section04 */
+  #about .section04 {
+    padding: 0;
+    margin-bottom: 50px;
+  }
+
+  /* section05 */
+  #about .section05 .inner {
+    display: block;
+    margin-bottom: 50px;
+    padding: 0 30px;
+  }
+
+  #about .section05 img {
+    width: 100%;
+    margin-bottom: 20px;
+
+  }
+
+  #about .section05 .text {
+    margin: 0;
+    margin-bottom: 0;
+  }
+
+  /* section06 */
+  #about .section06 {
+    /* margin-bottom: 50px; */
+    padding: 0 30px;
+  }
+
+  #about .section06 img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  #about .section06 .inner {
+    padding: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: block;
+  }
+
+  #about .section06 .text {
+    padding: 0;
+  }
+
+  /* section07 */
+  #about .section07 .inner {
+    display: block;
+    /* margin-bottom: 50px; */
+    padding: 50px 0;
+  }
+
+  #about .section07 .text {
+    padding: 0 30px;
+  }
+
+  #about .section07 table {
+    line-height: 30px;
+  }
+
+  #about .section07 th {
+    padding: 0 10px;
+    font-weight: bold;
+    width: 70px;
+  }
+
+  #about .section07 img {
+    width: 100%;
+  }
+
+
+  /* section08 */
+  #about .section08 {
+    /* margin-bottom: 50px; */
+    padding: 50px 30px;
+  }
+
+  #about .section08 img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  #about .section08 .inner {
+    display: block;
+    padding: 0;
+  }
+
+  #about .section08 .text {
+    padding: 0;
+  }
+
+  #about .section08 .text_left {
+    margin-right: 50px;
+  }
+
+  #about .section08 .text_left p:first-child,
+  #about .section08 .text_right p:first-child {
+    margin-bottom: 10px;
+  }
+
+
+  /*=====================================
+	離島留学ページ　
+======================================*/
+  /* section02 */
+  #abroad .section02 .inner {
+    display: flex;
+    flex-direction: column-reverse;
+    /* margin-bottom: 50px; */
+    padding: 0 30px;
+  }
+
+  #abroad .section02 .text {
+    padding: 0;
+    margin-right: 0;
+    margin-top: 0;
+  }
+
+  #abroad .section02 .text p {
+    margin-bottom: 30px;
+  }
+
+  #abroad .section02 .text h2 {
+    margin-bottom: 30px;
+    line-height: 30px;
+  }
+
+  #abroad .section02 img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  /* section03 */
+  #abroad .section03 {
+    /* margin-bottom: 50px; */
+    padding: 0 30px;
+  }
+
+  #abroad .section03 .inner {
+    display: block;
+    /* padding: 50px 0; */
+  }
+
+  #abroad .section03 .inner .area1,
+  #abroad .section03 .inner .area2,
+  #abroad .section03 .inner .area3 {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  /* section04 */
+  #abroad .section04 .inner {
+    display: block;
+    /* margin-bottom: 50px; */
+    padding: 0 30px;
+  }
+
+  #abroad .section04 .text {
+    padding: 0;
+  }
+
+  #abroad .section04 img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  /* section05 */
+  #abroad .section05 {
+    /* margin-bottom: 50px; */
+    padding: 50px 30px;
+  }
+
+  #abroad .section05 .inner {
+    display: block;
+  }
+
+  #abroad .section05 .inner .left,
+  #abroad .section05 .inner .right {
+    padding: 0;
+  }
+
+  #abroad .section05 .inner .left {
+    margin-bottom: 50px;
+  }
+
+  #abroad .section05 .text {
+    height: auto;
+    padding: 50px 30px;
+  }
+
+  #abroad .section05 img {
+    margin-bottom: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* section06 */
+  #abroad .section06 {
+    margin-bottom: 50px;
+    padding: 50px 0;
+  }
+
+
+  /*=====================================
+	離島留学 / 学校案内 スライドショー
+======================================*/
+  #abroad .slider img,
+  #about .slider img {
+    height: 200px;
+  }
+
+  #abroad .slider .slick-slide,
+  #about .slider .slick-slide {
+    margin: 0 5px;
+  }
+
+
+  /*=====================================
+	入試情報について　
+======================================*/
+
+  /* section02 */
+  #examination .section02 {
+    width: 100%;
+    /* margin-bottom: 50px; */
+  }
+
+  #examination .section02 img {
+    width: 100%;
+  }
+
+  /* section03 */
+  #examination .section03 {
+    padding: 50px 30px;
+    /* margin-bottom: 50px; */
+  }
+
+  #examination .section03 p a {
+    height: auto;
+    width: 95%;
+  }
+
+  /* section04 */
+  #examination .section04 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 30px;
+    padding: 0;
+    margin-bottom: 50px;
+  }
+
+  #examination .section04 img {
+    width: 85%;
+  }
+
+  #examination .section04 h2 {
+    margin-bottom: 20px;
+  }
+
+  /* section05 */
+
+  #examination .section05 {
+    padding: 50px 30px;
+    margin-bottom: 50px;
+  }
+
+  #examination .section05 p a {
+    height: auto;
+    width: 95%;
+  }
+
+  /******** リンクデザイン **********/
+  .link1 a,
+  .link2 a {
+    padding: 20px 20px;
+  }
+
+
+  /*=====================================
+	学校長あいさつ
+======================================*/
+  /* section02 */
+  #koutyou .section02 {
+    padding: 0 30px;
+    /* margin-bottom: 50px; */
+  }
+
+  #koutyou .section02 img {
+    width: 100%;
+  }
+
+  /* section03 */
+  #koutyou .section03 {
+    padding: 50px 30px;
+  }
+
+  #koutyou .section03 .inner {
+    padding: 0;
+  }
+
+  #koutyou .section03 .bold {
+    margin-bottom: 0;
+    font-size: 14px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+
+  /* section04 */
+  #koutyou .section04 {
+    width: 100%;
+    /* margin-bottom: 50px; */
+  }
+
+  #koutyou .section04 p {
+    margin-top: -100px;
+    display: inline-block;
+    padding: 30px 50px;
+    line-height: 20px;
+    margin-right: 25px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

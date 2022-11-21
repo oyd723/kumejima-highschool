@@ -94,3 +94,35 @@
     opacity: 1;
   }
 }
+
+
+/*=====================================
+	レスポンシブ用
+======================================*/
+@media screen and (max-width: 480px) {
+
+  /******** リンクを右下に固定 **********/
+  #pagetop {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  /******** 画像の切り替えと動き **********/
+  #pagetop a {
+    /*aタグの形状*/
+    width: 70px;
+    height: 70px;
+    font-size: 0.6rem;
+  }
+
+  #pagetop.floatAnime a {
+    width: 70px;
+    height: 70px;
+  }
+
+
+
+
+
+
+}

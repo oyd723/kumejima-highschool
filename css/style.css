@@ -21,6 +21,14 @@ body {
   transition: all 2.3s 0s ease-out;
 }
 
+.only-mobile02 {
+  display: block;
+}
+
+.only-mobile03 {
+  display: none;
+}
+
 /*=====================================
 	共通デザイン　ヘッダー
 ======================================*/
